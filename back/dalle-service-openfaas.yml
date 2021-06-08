@@ -1,0 +1,12 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  dalle-service-openfaas:
+    lang: python3
+    handler: ./dalle-service-openfaas
+    image: louis030195/dalle-service-openfaas:latest
+annotations:
+  com.openfaas.profile: withgpu
+

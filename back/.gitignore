@@ -3,3 +3,6 @@ env_service
 taming
 testing
 *.pt
+
+template
+build
