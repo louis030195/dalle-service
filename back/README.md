@@ -13,14 +13,9 @@ change model_paths.json with your dalle checkpoints
 
 ## Deployment to Openfaas
 
-1. Install the latest faas-netes release and the CRD. The is most easily done with [arkade](https://github.com/alexellis/arkade)
+1. [Install Openfaas](https://docs.openfaas.com/deployment)
 
-```bash
-arkade install openfaas
-````
-
-2. Label and Taint the node with the GPU
-
+2. Label and Taint you k8s GPU node(s)
 
 ```bash
 kubectl labels nodes node1 gpu=installed
@@ -53,8 +48,14 @@ spec:
 EOF
 ```
 
-4. Deploy
+4. Build & Deploy
 
 ```bash
 faas-cli up -f dalle-service-openfaas.yml
+```
+
+5. Call
+
+```bash
+echo "a cat with wings" | faas-cli invoke dalle-service-openfaas
 ```

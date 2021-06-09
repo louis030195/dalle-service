@@ -1,10 +1,10 @@
 version: 1.0
 provider:
   name: openfaas
-  gateway: http://127.0.0.1:8080
+  gateway: https://openfaas.louis030195.com
 functions:
   dalle-service-openfaas:
-    lang: python3
+    lang: dockerfile
     handler: ./dalle-service-openfaas
     image: louis030195/dalle-service-openfaas:latest
 annotations:

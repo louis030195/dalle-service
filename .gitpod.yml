@@ -1,0 +1,16 @@
+# Commands to start on workspace startup
+tasks:
+  - init: kubectl version --client
+    command: kubectl version --client
+  - init: gcloud auth login
+    command: echo "You have to login to Google Cloud" && gcloud auth login
+  - init: gcloud projects list
+    command: gcloud projects list && echo "now set a project using gcloud config set project [PROJECT_ID]"
+  - init: docker login
+    command: echo "You have to login to DockerHub now" && docker login
+
+vscode:
+  extensions:
+    - ms-python.python
+    - eg2.vscode-npm-script
+    - ms-azuretools.vscode-docker
